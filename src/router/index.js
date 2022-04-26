@@ -42,6 +42,12 @@ const router = createRouter({
       name: 'lifecycle-hooks',
       component: () => import('../views/LifecycleHooksView.vue')
     }
+    ,
+    {
+      path: '/directives',
+      name: 'directives',
+      component: () => import('../views/DirectivesView.vue')
+    }
   ]
 })
 
