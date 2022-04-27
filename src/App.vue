@@ -11,6 +11,7 @@ import { RouterLink, RouterView } from 'vue-router'
     <RouterLink to="/lifecycle-hooks">Lifecycle Hooks</RouterLink>
     <RouterLink to="/directives">Directives</RouterLink>
     <RouterLink to="/about">About</RouterLink>
+    <RouterLink to="/posts">Posts</RouterLink>
   </nav>
   <!--<RouterView v-slot="{ Component }">
     <KeepAlive>

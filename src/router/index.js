@@ -41,12 +41,22 @@ const router = createRouter({
       path: '/lifecycle-hooks',
       name: 'lifecycle-hooks',
       component: () => import('../views/LifecycleHooksView.vue')
-    }
-    ,
+    },
     {
       path: '/directives',
       name: 'directives',
       component: () => import('../views/DirectivesView.vue')
+    },
+    {
+      path: '/posts',
+      name: 'posts',
+      component: () => import('../views/PostsView.vue')
+    }
+    ,
+    {
+      path: '/postDetail/:id',
+      name: 'postDetail',
+      component: () => import('../views/PostDetailView.vue')
     }
   ]
 })
