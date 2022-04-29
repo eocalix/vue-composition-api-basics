@@ -10,8 +10,11 @@ import { RouterLink, RouterView } from 'vue-router'
     <RouterLink to="/method-computed-watch">Method, Computed, Watch</RouterLink>
     <RouterLink to="/lifecycle-hooks">Lifecycle Hooks</RouterLink>
     <RouterLink to="/directives">Directives</RouterLink>
+    <RouterLink to="/routes">Routes</RouterLink>
+    <RouterLink to="/lists">Lists</RouterLink>
+    <RouterLink to="/template-refs">Template Refs</RouterLink>
+    <RouterLink to="/teleport">Teleport</RouterLink>
     <RouterLink to="/about">About</RouterLink>
-    <RouterLink to="/posts">Posts</RouterLink>
   </nav>
   <!--<RouterView v-slot="{ Component }">
     <KeepAlive>

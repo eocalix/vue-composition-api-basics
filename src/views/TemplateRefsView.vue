@@ -1,6 +1,6 @@
 <template>
-	<div class="directives">
-		<h2>{{ appTitle }}</h2>
+	<div class="template-refs">
+		<h2 ref="appTitleRef">{{ appTitle }}</h2>
 		<h3>{{ counterTitle}}:</h3>
 		<div>
 			<button class="btn" @click="decreaseCounter(2)">--</button>
@@ -21,13 +21,17 @@
 
 <script setup>
 	//import { ref, reactive, computed, watch, onBeforeMount, onMounted, onBeforeUnmount, onUnmounted, onActivated, onDeactivated, onBeforeUpdate, onUpdated } from 'vue';
-	import { ref, reactive, computed, watch, onMounted } from 'vue';
+	import { ref, reactive, computed, watch, onMounted, nextTick } from 'vue';
 	import { vAutofocus } from '@/directives/vAutofocus'
 	
 	const appTitle = 'My Amazing Counter App';
 
+	//this.$refs.appTitleRef
+	const appTitleRef = ref(null);
+
 	onMounted(() => {
-		console.log('Do stuff related to App Title')
+		//console.log('Do stuff related to App Title')
+		//console.log(`The app title is ${ appTitleRef.value.offsetWidth } px wide!`)
 	})
 
 	const counter = ref(0);
@@ -53,9 +57,19 @@
 		title: 'My Counter'
 	});
 
-	const increaseCounter = (amount, e) => {
+	const increaseCounter = async (amount, e) => {
 		//console.log(e);
 		counter.value += amount;
+		/*this.$nextTick(() => {
+			// Do something after the DOM has updated
+		})*/
+
+		/* nextTick(() => {
+			console.log('Do something when counter has updated in the DOM')
+		}) */
+
+		await nextTick();
+		console.log('Do something when counter has updated in the DOM')
 		//counterData.count++;
 	}
 
@@ -110,7 +124,7 @@
 </script>
 
 <style>
-	.directives {
+	.template-refs {
 		text-align: center;
 		padding: 20px;
 	}

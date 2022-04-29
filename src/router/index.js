@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import TeleportView from '../views/TeleportView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -48,15 +49,30 @@ const router = createRouter({
       component: () => import('../views/DirectivesView.vue')
     },
     {
-      path: '/posts',
-      name: 'posts',
-      component: () => import('../views/PostsView.vue')
+      path: '/routes',
+      name: 'routes',
+      component: () => import('../views/RoutesView.vue')
+    },
+    {
+      path: '/routeDetail/:id',
+      name: 'routeDetail',
+      component: () => import('../views/RouteDetailView.vue')
+    },
+    {
+      path: '/lists',
+      name: 'lists',
+      component: () => import('../views/ListsView.vue')
+    },
+    {
+      path: '/template-refs',
+      name: 'template-refs',
+      component: () => import('../views/TemplateRefsView.vue')
     }
     ,
     {
-      path: '/postDetail/:id',
-      name: 'postDetail',
-      component: () => import('../views/PostDetailView.vue')
+      path: '/teleport',
+      name: 'teleport',
+      component: TeleportView
     }
   ]
 })

@@ -1,7 +1,7 @@
 <template>
   <div class="post-detail">
     <h1>This is a post page</h1>
-    <p>Display the content of post with ID of {{ $route.params.id }} here!</p>
+    <p>Display the content of route with ID of {{ $route.params.id }} here!</p>
     <div>
       <button @click="showPostId">Show Post ID</button>
     </div>
@@ -11,7 +11,7 @@
     <div>
       <button @click="goToFirstPost">Go to first post</button>
     </div>
-    <p><router-link to="/posts">&lt; Back</router-link></p>
+    <p><router-link to="/routes">&lt; Back</router-link></p>
   </div>
 </template>
 
@@ -35,7 +35,7 @@
 
   const goToFirstPost = () => {
     router.push({
-      name: 'postDetail',
+      name: 'routeDetail',
       params: {
         id: '1'
       }
