@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import TeleportSlotsView from '../views/TeleportSlotsView.vue'
 import PropsEmitsView from '../views/PropsEmitsView.vue';
+import DynamicComponentsView from '../views/DynamicComponentsView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -78,6 +79,11 @@ const router = createRouter({
       path: '/props-emits',
       name:'props-emits',
       component: PropsEmitsView
+    },
+    {
+      path: '/dynamic-components',
+      name:'dynamic-components',
+      component: DynamicComponentsView
     }
 
   ]

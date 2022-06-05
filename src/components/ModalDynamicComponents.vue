@@ -2,14 +2,20 @@
   <teleport to=".modals-container">
 			<div v-if="modelValue" class="modal">
 				<h1>{{ props.title }}</h1>
-				<!--<button @click="$emit('hideModal')">Hide modal</button>-->
-				<!--<button @click="handleButtonClick">Hide modal</button>-->
 				<button @click="$emit('update:modelValue', false)">Hide modal</button>
+				<div>
+					Username is: {{ userData.username }}
+				</div>
 			</div>
 		</teleport>
 </template>
 
 <script setup>
+	/*
+		imports
+	*/
+	import { inject } from 'vue';
+
 	/*
 		props
 	*/
@@ -21,7 +27,7 @@
 		title: {
 			type: String,
 			default: 'No title specified'
-		}
+		},
 	})
 
 	console.log(props.title);
@@ -30,17 +36,13 @@
 		emits
 	*/
 	const emit = defineEmits([
-		'update:modelValue',
-		//'hideModal'
+		'update:modelValue'
 	])
 
 	/*
-		handle button click
+		user data
 	*/
-	const handleButtonClick = () => {
-		//emit('hideModal')
-		emit('update:modelValue', false)
-	}
+	const userData = inject('userData')
 
 </script>
 

@@ -1,8 +1,7 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <template>
+  <div class="user-data">
+    {{ userData.name }} @{{ userData.username }}
+  </div>
   <nav>
     <RouterLink to="/options-api">Options API</RouterLink>
     <RouterLink to="/composition-api">Composition API</RouterLink>
@@ -15,6 +14,7 @@ import { RouterLink, RouterView } from 'vue-router'
     <RouterLink to="/template-refs">Template Refs</RouterLink>
     <RouterLink to="/teleport-slots">Teleport, Slots</RouterLink>
     <RouterLink to="/props-emits">Props & Emits</RouterLink>
+    <RouterLink to="/dynamic-components">Dynamic Components</RouterLink>
     <RouterLink to="/about">About</RouterLink>
   </nav>
   <!--<RouterView v-slot="{ Component }">
@@ -22,8 +22,29 @@ import { RouterLink, RouterView } from 'vue-router'
       <Component :is="Component" />
     </KeepAlive>
   </RouterView>-->
+  <!--<RouterView v-bind:userData="userData" />-->
   <RouterView />
 </template>
+
+<script setup>
+  /*
+    imports
+  */
+  import { ref, provide } from 'vue'
+  import { RouterLink, RouterView } from 'vue-router'
+
+  /*
+    user data
+  */
+
+  const userData = ref({
+    name: 'Edwin',
+    username: 'eocalix'
+  })
+
+  provide('userData', userData.value);
+
+</script>
 
 <style>
 @import '@/assets/base.css';
@@ -82,6 +103,16 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
+}
+
+.user-data {
+  position: absolute;
+  background: beige;
+  top: 5px;
+  right: 5px;
+  font-size: 12px;
+  padding: 5px;
+  color: #333;
 }
 
 </style>

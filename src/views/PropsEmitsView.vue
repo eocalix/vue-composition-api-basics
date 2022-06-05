@@ -2,8 +2,8 @@
 	<div class="modals">
 		<h1>Props & Emits</h1>
 		<button v-on:click="showModal = true">Show modal</button>
-		<ModalPropsEmits v-model="showModal" @hideModal="showModal = false" title="My modal title (via prop)">
-		</ModalPropsEmits>
+		<!--<ModalPropsEmits v-model="showModal" @hideModal="showModal = false" title="My modal title (via prop)"></ModalPropsEmits>-->
+		<ModalPropsEmits v-model="showModal" title="My modal title (via prop)"></ModalPropsEmits>
 	</div>
 </template>
 
