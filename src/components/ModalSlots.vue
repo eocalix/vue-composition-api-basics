@@ -1,8 +1,8 @@
 <template>
   <teleport to=".modals-container">
 			<div class="modal">
-				<h1><slot name="title" /></h1>
-				<slot />
+				<h1><slot name="title"></slot></h1>
+				<slot></slot>
 				<!--<pre>{{ $slots.title() }}</pre>-->
 				<button>Hide modal</button>
 			</div>

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import TeleportView from '../views/TeleportView.vue'
+import TeleportSlotsView from '../views/TeleportSlotsView.vue'
+import PropsEmitsView from '../views/PropsEmitsView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -67,13 +68,18 @@ const router = createRouter({
       path: '/template-refs',
       name: 'template-refs',
       component: () => import('../views/TemplateRefsView.vue')
-    }
-    ,
+    },
     {
-      path: '/teleport',
-      name: 'teleport',
-      component: TeleportView
+      path: '/teleport-slots',
+      name: 'teleport-slots',
+      component: TeleportSlotsView
+    },
+    {
+      path: '/props-emits',
+      name:'props-emits',
+      component: PropsEmitsView
     }
+
   ]
 })
 

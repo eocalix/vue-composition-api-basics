@@ -13,7 +13,8 @@ import { RouterLink, RouterView } from 'vue-router'
     <RouterLink to="/routes">Routes</RouterLink>
     <RouterLink to="/lists">Lists</RouterLink>
     <RouterLink to="/template-refs">Template Refs</RouterLink>
-    <RouterLink to="/teleport">Teleport</RouterLink>
+    <RouterLink to="/teleport-slots">Teleport, Slots</RouterLink>
+    <RouterLink to="/props-emits">Props & Emits</RouterLink>
     <RouterLink to="/about">About</RouterLink>
   </nav>
   <!--<RouterView v-slot="{ Component }">

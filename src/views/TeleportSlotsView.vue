@@ -2,20 +2,20 @@
 	<div class="modals">
 		<h1>Teleport</h1>
 		<button v-on:click="showModal = true">Show modal</button>
-		<Modal v-if="showModal">
+		<ModalSlots v-if="showModal">
 			<template v-slot:title>My new title</template>
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. 
 				Porro, minus. Hic a atque excepturi nobis nihil reiciendis molestias magni. 
 				Distinctio cum adipisci ea at perferendis est accusamus, architecto quis vero!
 			</p>
-		</Modal>
+		</ModalSlots>
 	</div>
 </template>
 
 <script setup>
 	import { ref } from 'vue'
-	import Modal from '@/components/Modal.vue'
+	import ModalSlots from '@/components/ModalSlots.vue'
 	const showModal = ref(false);
 </script>
 
